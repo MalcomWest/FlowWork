@@ -1,0 +1,471 @@
+:root{
+    /* colors */
+    --main-color: #121A22;
+    --hover-color: #1e2832;
+    --border-color: #28394a;
+    --white-font: #fff;
+    --gray-font: rgb(164, 164, 164);
+}
+
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Black scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: #222;
+}
+
+/* Firefox support */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #000 transparent;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-image: url(Screenshot\ 2026-11-16\ at\ 10.04.53\ PM.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header{
+    background-color: var(--main-color);
+    border: 1px solid var(--border-color);
+    color: aliceblue;
+    padding: 10px;
+    width: 100%;
+    letter-spacing: 2px;
+    font-weight: 400;
+    user-select: none;
+}
+
+
+.briefBoard{
+    padding-left: 10px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    font-size: 0.7rem;
+    padding-right: 10px;
+    user-select: none;
+    letter-spacing: 1px;
+    color: var(--gray-font);
+    cursor: pointer;
+    transition: 100ms ease-in;
+    display: inline-block;
+    border-radius: 7px;
+}
+
+.briefBoard:hover{
+    background-color: var(--hover-color);
+    transition: 100ms ease-out;
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider {
+    flex: 1;
+    min-height: 0;
+    color: var(--gray-font);
+    display: flex;
+    flex-direction: row;
+    /* justify-content: c; */
+    width: 100%;
+    overflow: auto;
+}
+.sliderCols{
+    color: var(--gray-font);
+}
+
+
+.sliderCols{
+    height: calc(100% - 20px);
+    max-width: 290px;
+    min-width: 290px;
+    margin: 10px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.sliderColsStyle{
+    height: calc(100% - 20px);
+    max-width: 290px;
+    min-width: 290px;
+    margin: 10px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#colSec {
+    height: fit-content;
+}
+
+.sliderColsTop{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(240, 179, 87);
+
+}
+
+.colTitle > p{
+    color: var(--gray-font); 
+}
+
+
+
+.sliderTasks{
+    margin-top: 10px;
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: #17212B;
+    user-select: none;
+    min-width: 268px;
+}
+
+.sliderTasks > i{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+
+.sliderTasksLeft{
+    border: 1px solid orange;
+}
+
+
+
+
+.sliderTasksRight{
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.sliderTasksRightTop{
+    color: white;
+    font-size: 0.8rem;
+}
+
+.sliderTasksRightBottom{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.sliderTasksRightBottomBottom{
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #ff908434;
+    border-radius: 3px;
+    color: #FF9184;
+    max-width: 150px;
+}
+
+.sliderRight{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sliderRight > i{
+    cursor: pointer;
+}
+
+.emptyTask{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    border: 1px dotted var(--border-color);
+}
+
+
+.AddCard{
+    padding: 4px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    transition: 100ms ease-in;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.yoy{
+    padding-top: 10px;
+}
+
+.AddCard:hover{
+    background-color: var(--hover-color);
+    transition: 100ms ease-out;
+    color: #fff;
+}
+
+
+
+.formStyle{
+    color: var(--gray-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    max-width: 700px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cardFormHeader{
+    width: 100%;
+    padding: 15px;
+    color: var(--white-font);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form > hr{
+    width: 100%;
+    border: none;             
+    height: 2px;             
+    background-color: var(--border-color);
+    opacity: 0.5;
+}
+
+.form{
+    background-color: #17212B;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    max-height: 600px;
+    overflow: auto;
+}
+
+.inputSectionParent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    padding: 15px;
+}
+
+.inputSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.inputSection > *{
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.formBtn{
+    background-color: #8CE6F2;
+}
+
+
+#columnSave, #cardSave{
+    color: #000;
+}
+
+
+.colorWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.sectionColors{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.sectionColors > *{
+    padding: 2px;
+    border-radius: 3px;
+}
+
+#colorIput{
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    color: rgb(215, 215, 215);
+    font-size: 0.8rem;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #17212B;
+    
+}
+
+.sectionColors > *:hover{
+    background-color: #253340;
+    
+}
+
+.hover:hover{
+    background-color: #253340;
+    transition: 100ms;
+}
+
+.hover2{
+    transition: 100ms ease-in;
+}
+.hover2:hover{
+    background-color: #b5eaf1;
+}
+
+.selected{
+    background-color: #253340;
+}
+
+.inputSectionValue > *{
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    color: rgb(215, 215, 215);
+    font-size: 0.8rem;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #17212B;
+}
+
+
+.inputSectionParent > hr{
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+
+.formBottom{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    color: var(--gray-font);
+}
+
+.formBottom > *{
+    padding: 8px;
+    color: var(--gray-font);
+    outline:none;
+    border: none;
+
+}
+
+.formCan{
+    background-color: #ffffff00;
+    border-radius: 3px;
+    transition: 100ms ease-in;
+}
+
+.formCan:hover{
+    background-color: #253340;
+    transition: 100ms ease-out;
+    color: #d4d4d4;
+}
+
+#formSave{
+    background-color: rgb(92, 217, 232);
+    color: black;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    transition: 100ms ease-in;
+}
+
+#formSave:hover{
+    background-color: rgb(115, 215, 226);
+    transition: 100ms ease-out;
+}
+
+.focus:focus{
+    outline:2px solid rgb(92, 217, 232);
+    outline-offset: 2px;
+}
+
+
+.hidden{
+    display: none;
+}
+
+.specialHover{
+    transition: 100ms ease-in;
+    cursor: pointer;
+    border: 1px solid #151e27;
+}
+
+
+.specialHover:hover{
+    color: rgb(219, 219, 219);
+    transition: 100ms ease-out;
+    border-color: var(--border-color);
+}
+
+.lowBrightness{
+    filter: brightness(50%);
+    pointer-events: none;
+    user-select: none;
+}
+
+.sliderColWrapper{
+    display: flex;
+    height: 100%;
+}
+
+
+
+/* .emTask{
+
+} */

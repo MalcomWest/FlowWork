@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FlowWork - Organize your tasks">
+    <meta property="og:description" content="Your own workspace to organize tasks, manage projects, and stay productive.">
+    <meta property="og:image" content="https://yourdomain.com/mack.png">
+    <meta property="og:url" content="https://yourdomain.com/">
+
+    <!-- Twitter / X Preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FlowWork - Organize your tasks">
+    <meta name="twitter:description" content="Your own workspace to organize tasks and stay productive.">
+    <meta name="twitter:image" content="https://yourdomain.com/mack.png">
+    <title>FlowWork - Organize your tasks</title>
+</head>
+<body>
+    
+
+    <header>
+        <nav><p>FlowWork</p></nav>
+    </header>
+
+    <main class="" id="main">
+        <div class="briefBoard" id="brief">
+            <p>Your Own Board</p>
+        </div>
+
+        <div class="slider" id="sliderParent" >
+            <div class="sliderColWrapper">
+                
+            </div>
+
+            
+
+            <div class="sliderColsStyle specialHover" id="colSec">
+                <div class="adder" >
+                    <p>+ Add column</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="cardForm formStyle hidden" id="cardFrm">
+            <div class="form">
+                <div class="cardFormHeader">
+                    <p id="formTitle"> Add Card to (NAME)</p>
+
+                    <i class="fa-solid fa-xmark hover cardClose" style="color: rgb(164, 164, 164); padding: 3px; border-radius: 3px;" ></i>
+                </div>
+
+                <hr>
+
+
+                <div class="inputSectionParent">
+                    <div class="inputSection">
+                        <div class="inputSectionTitle">
+                            <p>Title</p>
+                        </div>
+
+                        <div class="inputSectionValue">
+                            <input type="text" class="focus" required name="" id="titleInput">
+                        </div>
+                    </div>
+
+                    <div class="inputSection">
+                        <div class="inputSectionTitle">
+                            <p>Description</p>
+                        </div>
+
+                        <div class="inputSectionValue">
+                            <textarea name="" class="focus" style="width: 100%; min-height: 100px; resize:vertical" id="descriptionInput"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="inputSection">
+                        <div class="inputSectionTitle">
+                            <p>Color</p>
+                        </div>
+
+                        <div class="colorWrapper">
+                            <div class="sectionColors">
+                                <div class="blank"><i class="fa-solid fa-ban" style="color: rgb(177, 177, 177);"></i></div>
+                                <div class="red"><i class="fa-solid fa-circle" style="color: rgb(223, 86, 86);"></i></div>
+                                <div class="orange"><i class="fa-solid fa-circle" style="color: rgb(255, 108, 34);"></i></div>
+                                <div class="yellow"><i class="fa-solid fa-circle" style="color: rgb(255, 199, 0);"></i></div>
+                                <div class="green"><i class="fa-solid fa-circle" style="color: rgb(60, 242, 114);"></i></div>
+                                <div class="blue"><i class="fa-solid fa-circle" style="color: rgb(61, 170, 255);"></i></div>
+                                <div class="indigo"><i class="fa-solid fa-circle" style="color: rgb(138, 97, 255);"></i></div>
+                            </div>
+
+                            <input type="text" name=""  placeholder="Custom color code, e.g. #30a46c" class="focus" id="colorIput">
+                        </div>
+
+                    </div>
+
+                    <div class="inputSection">
+                        <div class="inputSectionTitle">
+                            <p>Title</p>
+                        </div>
+
+                        <div class="inputSectionValue">
+                            <input type="date" class="focus" name="" id="dateInput">
+                        </div>
+                    </div>
+
+
+                    <hr>
+
+
+                    <div class="formBottom">
+                        <button class="formBtn formCan formCan1" id="cardCancel">Cancel</button>
+                        <button class="formBtn hover2 saveCard" id="cardSave">Save Card</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="columnForm formStyle hidden" id="addCoumn">
+            <div class="form">
+                <div class="cardFormHeader">
+                    <p>Add column</p>
+
+                    <i class="fa-solid fa-xmark hover closeColumn" style="color: rgb(164, 164, 164); padding: 3px; border-radius: 3px;"></i>
+                </div>
+
+                <hr>
+
+
+                <div class="inputSectionParent">
+                    <div class="inputSection">
+                        <div class="inputSectionTitle">
+                            <p>Name</p>
+                        </div>
+
+                        <div class="inputSectionValue">
+                            <input type="text" id="columnName" class="focus" required name="" placeholder="Column name" >
+                        </div>
+                    </div>
+
+                   
+
+
+                    <hr>
+
+
+                    <div class="formBottom">
+                        <button class="formBtn formCan colCan" id="columnCancel">Cancel</button>
+                        <button class="formBtn hover2 colAdd" id="columnSave">Add column</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
