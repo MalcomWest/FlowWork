@@ -16,6 +16,7 @@ function makeColumn(colName) {
         cards : []
     })
     localStorage.setItem("allData", JSON.stringify(dataArr))
+    isDragging = false;
     sliderParent.innerHTML = ``
     renderColumn()
 }
@@ -165,6 +166,10 @@ if (!isDragging) return;
     const inx = dataArr.findIndex(user => user.id == fromMoved);
     const inv = dataArr[inx].cards.findIndex(user => user.cardID == draggedCardID);
     const inc = dataArr.findIndex(user => user.id == dropColumn.classList[1]);
+    if (inx === -1 || inv === -1 || inc === -1) {
+        isDragging = false;
+        return;
+    }
     let movingObj = dataArr[inx].cards[inv]
     dataArr[inc].cards.push(movingObj)
     dataArr[inx].cards.splice(inv,1)
@@ -196,6 +201,9 @@ function addCardFunc(workID) {
 
         dataArr[index].cards.push(objCard)
         localStorage.setItem("allData", JSON.stringify(dataArr))
+    }
+    else{
+        alert("Enter all values")
     }
 
     document.getElementById("titleInput").value = ""
