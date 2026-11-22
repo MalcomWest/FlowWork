@@ -86,19 +86,35 @@ document.addEventListener('DOMContentLoaded', ()=>{
     renderColumn()
 })
 
-document.addEventListener('click', (e)=>{
-    if (e.target.closest(".cardDel")) {
-        let dataArr = JSON.parse(localStorage.getItem("allData"))
-        let iid = e.target.closest(".sliderCols").classList[1]
-        const index = dataArr.findIndex(user => user.id == iid);
-        let ind = dataArr[index].cards.findIndex(user => user.cardID == e.target.closest(".cardDel").parentElement.classList[1]);
-        dataArr[index].cards.splice(ind,1)
-        localStorage.setItem("allData", JSON.stringify(dataArr))    
-        e.target.closest(".cardDel").parentElement.remove()
 
-        renderColumn()
+document.addEventListener('click', (e) => {
+    if (e.target.closest(".cardDel")) {
+        let dataArr = JSON.parse(localStorage.getItem("allData")) || [];
+
+        let card = e.target.closest(".sliderTasks");
+        let column = e.target.closest(".sliderCols");
+
+        let iid = column.classList[1];
+        let cardID = card.classList[1];
+
+        const index = dataArr.findIndex(user => user.id == iid);
+
+        if (index === -1) return;
+
+        let ind = dataArr[index].cards.findIndex(
+            user => user.cardID == cardID
+        );
+
+        if (ind === -1) return;
+
+        dataArr[index].cards.splice(ind, 1);
+
+        localStorage.setItem("allData", JSON.stringify(dataArr));
+
+        renderColumn();
     }
-})
+});
+
 
 
 let isDragging = false;
@@ -119,9 +135,10 @@ document.addEventListener('pointerdown', (e)=>{
     let selected = e.target.closest(".sliderTasks")
     
     if (selected) {
+         if (e.target.closest(".cardDel")) return;
+
         draggedCardID = selected.classList[1]
         fromMoved = e.target.closest(".sliderCols").classList[1]
-        if (e.target.closest(".cardDel")) return;
         let rect = selected.getBoundingClientRect();
 
         originalLeft = rect.left;
@@ -175,6 +192,8 @@ if (!isDragging) return;
     dataArr[inx].cards.splice(inv,1)
 
     localStorage.setItem("allData", JSON.stringify(dataArr))
+
+    isDragging = false;
 
     renderColumn()
 
